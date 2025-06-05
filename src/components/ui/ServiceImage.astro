@@ -1,0 +1,31 @@
+---
+interface Props {
+  categoryTitle: string;
+  alt: string;
+  class?: string;
+}
+
+const { categoryTitle, alt, class: className = '' } = Astro.props;
+
+// Mapeo de categorías a nombres de archivo
+const imageMap = {
+  'pintura': 'pintura',
+  'remodelacion-general': 'remodelacion-general',
+  'carpinteria': 'carpinteria',
+  'tape-bed': 'remodelacion-general', // Usar imagen genérica
+  'otros-servicios': 'remodelacion-general' // Usar imagen genérica
+};
+
+// Obtener el nombre del archivo de imagen, usando 'remodelacion-general' como predeterminado
+const imageName = imageMap[categoryTitle.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')] || 'remodelacion-general';
+const imagePath = `/images/services/${imageName}.jpg`;
+---
+
+<div class={`overflow-hidden bg-gray-100 flex items-center justify-center ${className}`}>
+  <img 
+    src={imagePath}
+    alt={alt}
+    class="w-full h-full object-cover service-image transition-transform duration-500"
+    loading="lazy"
+  />
+</div>

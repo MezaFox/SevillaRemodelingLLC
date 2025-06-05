@@ -1,0 +1,63 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@/components/ui/link.astro";
+---
+
+<Layout title="Servicios de Pintura | Sevilla Remodeling LLC">
+  <main class="container mx-auto px-4 py-12">
+    <div class="mb-8">
+      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
+        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+        Volver a Servicios
+      </Link>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-8">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🖌️</span>
+          <h1 class="text-3xl md:text-4xl font-bold">Interior & Exterior Painting</h1>
+        </div>
+        
+        <div class="prose max-w-none">
+          <p class="text-lg mb-6">
+            En Sevilla Remodeling LLC, ofrecemos servicios profesionales de pintura tanto para interiores como exteriores. Nuestro equipo de expertos está comprometido a transformar su espacio con acabados de alta calidad y colores duraderos.
+          </p>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Pintura Incluyen:</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Pintura de interiores (paredes, techos, molduras)</li>
+            <li>Pintura de exteriores (fachadas, puertas, ventanas)</li>
+            <li>Preparación de superficies</li>
+            <li>Reparación de paredes dañadas</li>
+            <li>Aplicación de selladores y primers</li>
+            <li>Asesoramiento en selección de colores</li>
+            <li>Acabados decorativos</li>
+          </ul>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Utilizamos pinturas de alta calidad</li>
+            <li>Atención meticulosa a los detalles</li>
+            <li>Limpieza completa después del trabajo</li>
+            <li>Personal profesional y experimentado</li>
+            <li>Presupuestos transparentes sin costos ocultos</li>
+          </ul>
+          
+          <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-4">¿Listo para transformar su espacio?</h2>
+            <Link 
+              href="/contact" 
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
+              Solicitar Presupuesto Gratuito
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

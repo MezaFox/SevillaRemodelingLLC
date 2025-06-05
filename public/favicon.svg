@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
+  <!-- House Shape -->
+  <path fill="#f97316" d="M18 4L4 16v16h28V16L18 4z"/>
+  
+  <!-- Roof -->
+  <path fill="#ea580c" d="M18 4L4 16h28L18 4z"/>
+  
+  <!-- Door -->
+  <path fill="#7c2d12" d="M15 24v8h6v-8h-6z"/>
+  
+  <!-- Windows -->
+  <path fill="#e5e7eb" d="M8 20h6v6H8v-6z"/>
+  <path fill="#e5e7eb" d="M22 20h6v6h-6v-6z"/>
+  
+  <!-- Paintbrush -->
+  <path fill="#1e293b" d="M26 8l4-4 2 2-4 4-2-2z"/>
+  <path fill="#94a3b8" d="M24 10l2 2c0 0-4 4-6 6l-2-2c2-2 6-6 6-6z"/>
+  
+  <style>
+    @media (prefers-color-scheme:dark){
+      :root{
+        filter: brightness(0.8) contrast(1.2);
+      }
+      path[fill="#e5e7eb"] {
+        fill: #94a3b8;
+      }
+    }
+  </style>
+</svg>

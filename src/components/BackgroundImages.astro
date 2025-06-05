@@ -1,0 +1,48 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+---
+
+<div class="fixed inset-0 -z-10 overflow-hidden">
+  <!-- Imagen de fondo única -->
+  <div class="absolute inset-0 w-full h-full">
+    <img 
+      src="/images/backgrounds/home-bg.jpg" 
+      alt="Casa de lujo recién remodelada" 
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <!-- Superposición clara para mejorar la legibilidad del contenido -->
+    <div class="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
+  </div>
+</div>
+
+<style>
+  /* Asegurarse de que el fondo no interfiera con la interacción del usuario */
+  .fixed {
+    pointer-events: none;
+  }
+  
+  /* Asegurar que el contenido esté por encima del fondo */
+  .relative {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Asegurar que la imagen cubra toda la pantalla */
+  .fixed img {
+    min-height: 100vh;
+    min-width: 100vw;
+    object-fit: cover;
+  }
+  
+  /* Efecto de transición suave al cargar */
+  @keyframes fadeIn {
+    from { opacity: 0.8; transform: scale(1.05); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .fixed img {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+</style>

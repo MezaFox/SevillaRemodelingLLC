@@ -1,0 +1,65 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@/components/ui/link.astro";
+---
+
+<Layout title="Textura de Paredes | Sevilla Remodeling LLC">
+  <main class="container mx-auto px-4 py-12">
+    <div class="mb-8">
+      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
+        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+        Volver a Servicios
+      </Link>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-8">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🧱</span>
+          <h1 class="text-3xl md:text-4xl font-bold">Textura de Paredes</h1>
+        </div>
+        
+        <div class="prose max-w-none">
+          <p class="text-lg mb-6">
+            En Sevilla Remodeling LLC, somos especialistas en la aplicación de texturas para paredes. Nuestro equipo de expertos puede crear una variedad de acabados texturizados para darle carácter y estilo a sus espacios.
+          </p>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Textura de Paredes Incluyen:</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Textura tipo naranja (orange peel)</li>
+            <li>Textura de salpicado (splatter)</li>
+            <li>Textura de estuco (knockdown)</li>
+            <li>Textura de arena (sand)</li>
+            <li>Textura de piel de cocodrilo (skip trowel)</li>
+            <li>Reparación de texturas existentes</li>
+            <li>Igualación de texturas en reparaciones</li>
+            <li>Preparación y aplicación de texturas</li>
+          </ul>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Experiencia en diversos tipos de texturas</li>
+            <li>Aplicación uniforme y profesional</li>
+            <li>Materiales de alta calidad</li>
+            <li>Atención meticulosa a los detalles</li>
+            <li>Limpieza durante y después del trabajo</li>
+            <li>Presupuestos transparentes</li>
+          </ul>
+          
+          <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-4">¿Listo para darle textura a sus paredes?</h2>
+            <Link 
+              href="/contact" 
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
+              Solicitar Presupuesto Gratuito
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

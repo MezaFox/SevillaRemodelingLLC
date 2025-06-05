@@ -1,0 +1,68 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+---
+
+<Layout title="About Us - Sevilla Remodeling">
+  <Container>
+    <!-- Contenedor con fondo blanco semi-transparente -->
+    <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 md:p-12 border border-white/20">
+      <Sectionhead>
+        <Fragment slot="title">About Us</Fragment>
+        <Fragment slot="desc">Transforming Spaces with Excellence</Fragment>
+      </Sectionhead>
+
+      <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+        <div class="flex flex-col gap-3">
+          <h2 class="font-bold text-3xl text-gray-800">
+            Our Story
+          </h2>
+          <p class="text-lg leading-relaxed text-slate-600">
+            Sevilla Remodeling is a family-owned company with years of experience in home improvement. Our mission is to turn your ideas into beautiful, functional living spaces.
+          </p>
+          <p class="text-lg leading-relaxed text-slate-600 mt-2">
+            We take pride in our attention to detail, quality craftsmanship, and customer satisfaction. Every project we undertake is approached with the same level of dedication and professionalism, regardless of size.
+          </p>
+          <div class="mt-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="bg-orange-500 p-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <span class="text-gray-700">Licensed and Insured</span>
+            </div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="bg-orange-500 p-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <span class="text-gray-700">Quality Materials</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="bg-orange-500 p-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <span class="text-gray-700">Satisfaction Guaranteed</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop&h=500"
+            alt="Sevilla Remodeling Team"
+            width={500}
+            height={400}
+            class="rounded-lg shadow-lg w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg"></div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>

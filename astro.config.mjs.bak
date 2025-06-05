@@ -1,0 +1,24 @@
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import icon from "astro-icon";
+
+// https://astro.build/config
+export default defineConfig({
+  site: "http://localhost:4321", // Cambiado a localhost para desarrollo
+  integrations: [mdx(), sitemap(), icon()],
+  server: {
+    host: true, // Permite conexiones desde otros dispositivos en la red local
+    port: 4321,
+    open: true // Abre el navegador automáticamente
+  },
+  vite: {
+    plugins: [tailwindcss()],
+    server: {
+      hmr: {
+        clientPort: 4321
+      }
+    }
+  },
+});

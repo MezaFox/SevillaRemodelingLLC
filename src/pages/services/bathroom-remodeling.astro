@@ -1,0 +1,63 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@/components/ui/link.astro";
+---
+
+<Layout title="Remodelación de Baños | Sevilla Remodeling LLC">
+  <main class="container mx-auto px-4 py-12">
+    <div class="mb-8">
+      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
+        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+        Volver a Servicios
+      </Link>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-8">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🛠️</span>
+          <h1 class="text-3xl md:text-4xl font-bold">Bathroom Remodeling</h1>
+        </div>
+        
+        <div class="prose max-w-none">
+          <p class="text-lg mb-6">
+            En Sevilla Remodeling LLC, transformamos baños anticuados en espacios modernos, funcionales y elegantes. Desde pequeñas actualizaciones hasta renovaciones completas, nuestro equipo de expertos está listo para crear el baño de sus sueños.
+          </p>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Remodelación de Baños Incluyen:</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Instalación de duchas y bañeras</li>
+            <li>Colocación de azulejos y pisos</li>
+            <li>Instalación de gabinetes y encimeras</li>
+            <li>Plomería y fontanería</li>
+            <li>Iluminación y ventilación</li>
+            <li>Pintura y acabados</li>
+            <li>Instalación de accesorios</li>
+          </ul>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Diseños personalizados según sus necesidades</li>
+            <li>Materiales de alta calidad</li>
+            <li>Atención meticulosa a los detalles</li>
+            <li>Cumplimiento de plazos y presupuestos</li>
+            <li>Profesionales experimentados y certificados</li>
+          </ul>
+          
+          <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-4">¿Listo para transformar su baño?</h2>
+            <Link 
+              href="/contact" 
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
+              Solicitar Presupuesto Gratuito
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

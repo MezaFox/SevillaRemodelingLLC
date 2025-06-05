@@ -1,0 +1,83 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo and Description -->
+      <div class="col-span-1 md:col-span-1">
+        <h2 class="text-2xl font-bold mb-4">Sevilla Remodeling</h2>
+        <p class="text-gray-400 mb-4">Transforming Spaces with Excellence</p>
+        <div class="flex space-x-4">
+          <!-- Social Media Links -->
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <Icon name="mdi:facebook" class="w-6 h-6" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <Icon name="mdi:instagram" class="w-6 h-6" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <Icon name="mdi:twitter" class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Services -->
+      <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Painting</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Remodeling</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Carpentry</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Landscaping</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+        <ul class="space-y-2">
+          <li class="flex items-center text-gray-400">
+            <Icon name="mdi:whatsapp" class="w-5 h-5 mr-2" />
+            <a href="https://wa.me/+1234567890" class="hover:text-white transition-colors">WhatsApp</a>
+          </li>
+          <li class="flex items-center text-gray-400">
+            <Icon name="mdi:message" class="w-5 h-5 mr-2" />
+            <a href="sms:+1234567890" class="hover:text-white transition-colors">iMessage</a>
+          </li>
+          <li class="flex items-center text-gray-400">
+            <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
+            <a href="mailto:info@sevillaremodeling.com" class="hover:text-white transition-colors">Email Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Divider -->
+    <div class="border-t border-gray-800 my-8"></div>
+    
+    <!-- Copyright and Badge -->
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm">
+        Copyright © {new Date().getFullYear()} Sevilla Remodeling LLC. All rights reserved.
+      </p>
+      <div class="flex items-center mt-4 md:mt-0">
+        <span class="bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+          <Icon name="mdi:shield-check" class="w-4 h-4 mr-1" />
+          Licensed and Insured
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>

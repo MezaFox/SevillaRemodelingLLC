@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@/components/ui/link.astro";
+---
+
+<Layout title="Instalación de Pisos | Sevilla Remodeling LLC">
+  <main class="container mx-auto px-4 py-12">
+    <div class="mb-8">
+      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
+        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+        Volver a Servicios
+      </Link>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-8">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🧱</span>
+          <h1 class="text-3xl md:text-4xl font-bold">Flooring (Tile, Wood, Vinyl)</h1>
+        </div>
+        
+        <div class="prose max-w-none">
+          <p class="text-lg mb-6">
+            En Sevilla Remodeling LLC, ofrecemos servicios profesionales de instalación de pisos para todo tipo de materiales. Nuestro equipo de expertos puede transformar cualquier espacio con pisos nuevos de alta calidad y acabados impecables.
+          </p>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Pisos Incluyen:</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Instalación de pisos de cerámica y porcelana</li>
+            <li>Pisos de madera natural y laminada</li>
+            <li>Pisos de vinilo y LVT (Luxury Vinyl Tile)</li>
+            <li>Preparación de subsuelos</li>
+            <li>Reparación y reemplazo de pisos dañados</li>
+            <li>Instalación de zócalos y molduras</li>
+            <li>Sellado y acabado de pisos</li>
+          </ul>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Experiencia en todo tipo de materiales</li>
+            <li>Instalación precisa y duradera</li>
+            <li>Atención meticulosa a los detalles</li>
+            <li>Limpieza durante y después del trabajo</li>
+            <li>Presupuestos transparentes</li>
+            <li>Garantía en nuestro trabajo</li>
+          </ul>
+          
+          <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-4">¿Listo para renovar sus pisos?</h2>
+            <Link 
+              href="/contact" 
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
+              Solicitar Presupuesto Gratuito
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

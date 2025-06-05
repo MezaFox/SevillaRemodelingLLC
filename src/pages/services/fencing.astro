@@ -1,0 +1,65 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@/components/ui/link.astro";
+---
+
+<Layout title="Servicios de Cercado | Sevilla Remodeling LLC">
+  <main class="container mx-auto px-4 py-12">
+    <div class="mb-8">
+      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
+        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+        Volver a Servicios
+      </Link>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-8">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🪚</span>
+          <h1 class="text-3xl md:text-4xl font-bold">Cercas y Vallas</h1>
+        </div>
+        
+        <div class="prose max-w-none">
+          <p class="text-lg mb-6">
+            En Sevilla Remodeling LLC, ofrecemos servicios profesionales de instalación y reparación de cercas y vallas. Nuestro equipo de expertos puede ayudarle a mejorar la privacidad, seguridad y estética de su propiedad con cercas de alta calidad.
+          </p>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Cercado Incluyen:</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Cercas de madera (privacidad, decorativas)</li>
+            <li>Cercas de vinilo</li>
+            <li>Cercas de malla ciclónica</li>
+            <li>Cercas de aluminio y hierro forjado</li>
+            <li>Puertas y portones</li>
+            <li>Reparación y mantenimiento de cercas</li>
+            <li>Reemplazo de postes y paneles</li>
+            <li>Tratamiento y sellado de cercas de madera</li>
+          </ul>
+          
+          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Experiencia en diversos tipos de cercas</li>
+            <li>Instalación profesional y duradera</li>
+            <li>Materiales de alta calidad</li>
+            <li>Diseños personalizados según sus necesidades</li>
+            <li>Cumplimiento de códigos y regulaciones locales</li>
+            <li>Presupuestos transparentes</li>
+          </ul>
+          
+          <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-4">¿Listo para mejorar su propiedad con una nueva cerca?</h2>
+            <Link 
+              href="/contact" 
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
+              Solicitar Presupuesto Gratuito
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

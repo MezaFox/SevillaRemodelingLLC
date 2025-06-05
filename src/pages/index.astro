@@ -1,0 +1,282 @@
+---
+import Features from "@/components/features.astro";
+import Hero from "@/components/hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Contactform from "@/components/contactform.astro";
+import ScrollRevealImage from "@/components/ScrollRevealImage.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Sevilla Remodeling - Transforming Spaces with Excellence">
+  <!-- Hero Section (Full Width) -->
+  <Hero />
+  
+  <!-- Services Section -->
+  <Features />
+  
+  <!-- About Us Section -->
+  <section class="py-16 bg-white">
+    <Container>
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-gray-800">Sobre Nosotros</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Transformando Espacios con Excelencia
+        </p>
+      </div>
+      
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2 relative rounded-xl overflow-hidden shadow-xl">
+          <img 
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop&h=500" 
+            alt="Equipo de Sevilla Remodeling" 
+            class="w-full h-auto object-cover rounded-xl transform hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl"></div>
+          <div class="absolute bottom-0 left-0 p-8 text-white">
+            <h3 class="text-2xl font-bold mb-2">Más de 10 años de experiencia</h3>
+            <p class="text-gray-200">Transformando hogares con pasión y dedicación</p>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <p class="text-lg leading-relaxed text-slate-600 mb-6">
+            En <span class="font-semibold text-orange-500">Sevilla Remodeling</span>, nos enorgullece ser una empresa familiar con años de experiencia en mejoras para el hogar. Nuestra misión es convertir tus ideas en espacios hermosos y funcionales que superen tus expectativas.
+          </p>
+          <p class="text-lg leading-relaxed text-slate-600 mb-8">
+            Nos destacamos por nuestra atención al detalle, artesanía de calidad y compromiso con la satisfacción del cliente. Cada proyecto que emprendemos recibe el mismo nivel de dedicación y profesionalismo.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-full mr-4 mt-1">
+                <Icon name="mdi:shield-check" class="w-5 h-5 text-orange-600" />
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-1">Asegurados y Garantizados</h3>
+                <p class="text-gray-600 text-sm">Trabajos respaldados por garantía</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-full mr-4 mt-1">
+                <Icon name="mdi:star" class="w-5 h-5 text-orange-600" />
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-1">Materiales de Calidad</h3>
+                <p class="text-gray-600 text-sm">Solo trabajamos con las mejores marcas</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-full mr-4 mt-1">
+                <Icon name="mdi:account-group" class="w-5 h-5 text-orange-600" />
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-1">Equipo Profesional</h3>
+                <p class="text-gray-600 text-sm">Expertos altamente capacitados</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-full mr-4 mt-1">
+                <Icon name="mdi:calendar-check" class="w-5 h-5 text-orange-600" />
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-1">Compromiso con los Plazos</h3>
+                <p class="text-gray-600 text-sm">Entregamos a tiempo, siempre</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a 
+              href="/about" 
+              class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition-colors"
+            >
+              Conoce más sobre nosotros
+              <Icon name="mdi:arrow-right" class="ml-2 w-5 h-5" />
+            </a>
+            <a 
+              href="/contact" 
+              class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-orange-500 bg-white hover:bg-gray-50 transition-colors"
+            >
+              Contáctanos
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  
+  <!-- Image Reveal Section -->
+  <section class="py-16 bg-white">
+    <Container>
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-gray-800">Diseños que Inspiran</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Transformamos espacios comunes en lugares extraordinarios
+        </p>
+      </div>
+      
+      <div class="max-w-6xl mx-auto">
+        <ScrollRevealImage 
+          imageUrl="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop&h=600"
+          altText="Interior minimalista moderno"
+          height="600px"
+        />
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a 
+          href="/portfolio" 
+          class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition-colors"
+        >
+          Ver más de nuestro trabajo
+          <Icon name="mdi:arrow-right" class="ml-2 w-5 h-5" />
+        </a>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <Container>
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-gray-800">Contáctanos</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Estamos listos para hacer realidad tus proyectos de remodelación
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Call-to-action destacado -->
+        <div class="lg:col-span-1">
+          <div class="relative h-80 lg:h-full rounded-xl overflow-hidden shadow-xl bg-gradient-to-br from-orange-500 via-orange-600 to-red-600">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+              <div class="text-white space-y-4">
+                <h3 class="text-2xl lg:text-3xl font-bold leading-tight">
+                  ¿Listo para comenzar?
+                </h3>
+                <p class="text-orange-100 text-base lg:text-lg leading-relaxed">
+                  Solicita una consulta gratuita hoy mismo y convierte tu visión en realidad
+                </p>
+                <div class="pt-2">
+                  <a 
+                    href="/contact" 
+                    class="inline-flex items-center gap-2 bg-white text-orange-600 hover:bg-orange-50 px-5 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Icon name="mdi:phone" class="w-5 h-5" />
+                    Consulta Gratuita
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Información de contacto -->
+        <div class="lg:col-span-1 bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6">Información de Contacto</h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-full mr-4 flex-shrink-0">
+                <Icon name="mdi:map-marker" class="w-5 h-5 text-orange-600" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Dirección</h4>
+                <p class="text-gray-600">123 Remodeling St, Orlando, FL 32801</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-full mr-4 flex-shrink-0">
+                <Icon name="mdi:phone" class="w-5 h-5 text-orange-600" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Teléfono</h4>
+                <a href="tel:+14045551234" class="text-orange-500 hover:text-orange-600 transition-colors">+1 (404) 555-1234</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-full mr-4 flex-shrink-0">
+                <Icon name="mdi:email" class="w-5 h-5 text-orange-600" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Correo Electrónico</h4>
+                <a href="mailto:info@sevillaremodeling.com" class="text-orange-500 hover:text-orange-600 transition-colors">info@sevillaremodeling.com</a>
+              </div>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-100">
+              <h4 class="font-semibold text-gray-800 mb-3">Horario de Atención</h4>
+              <ul class="space-y-2">
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Lunes - Viernes</span>
+                  <span class="font-medium">8:00 AM - 6:00 PM</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Sábado</span>
+                  <span class="font-medium">9:00 AM - 2:00 PM</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Domingo</span>
+                  <span class="font-medium">Cerrado</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="pt-4">
+              <h4 class="font-semibold text-gray-800 mb-3">Síguenos</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-600 hover:text-orange-500 transition-colors">
+                  <Icon name="mdi:facebook" class="w-6 h-6" />
+                </a>
+                <a href="#" class="text-gray-600 hover:text-orange-500 transition-colors">
+                  <Icon name="mdi:instagram" class="w-6 h-6" />
+                </a>
+                <a href="#" class="text-gray-600 hover:text-orange-500 transition-colors">
+                  <Icon name="mdi:youtube" class="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Formulario de contacto -->
+        <div class="lg:col-span-1 bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h3>
+          <Contactform />
+          
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <h4 class="font-semibold text-gray-800 mb-3">O contáctanos directamente</h4>
+            <div class="flex flex-col space-y-3">
+              <a 
+                href="https://wa.me/+14045551234" 
+                target="_blank"
+                class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg transition-colors"
+                rel="noopener"
+              >
+                <Icon name="mdi:whatsapp" class="w-5 h-5" />
+                WhatsApp
+              </a>
+              <a 
+                href="sms:+14045551234" 
+                class="flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg transition-colors"
+                rel="noopener"
+              >
+                <Icon name="mdi:message" class="w-5 h-5" />
+                iMessage
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+</Layout>

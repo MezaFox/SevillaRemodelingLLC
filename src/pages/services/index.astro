@@ -1,0 +1,384 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+// Lista de servicios con imágenes locales y descripciones mejoradas
+const services = [
+  // Pintura
+  {
+    title: "Pintura Residencial y Comercial",
+    description: "Servicios profesionales de pintura para interiores y exteriores con los más altos estándares de calidad.",
+    url: "/services/painting",
+    image: "/images/services/pintura.jpg"
+  },
+  
+  // Remodelación de Baños
+  {
+    title: "Remodelación de Baños",
+    description: "Transformación completa de baños con diseños modernos, funcionales y materiales de primera calidad.",
+    url: "/services/bathroom-remodeling",
+    image: "/images/services/remodelacion-general.jpg"
+  },
+  
+  // Remodelación de Cocinas
+  {
+    title: "Remodelación de Cocinas",
+    description: "Diseño y renovación de cocinas para crear espacios funcionales, modernos y acogedores.",
+    url: "/services/kitchen-renovations",
+    image: "/images/services/remodelacion-general.jpg"
+  },
+  
+  // Mejoras de Dormitorios
+  {
+    title: "Remodelación de Dormitorios",
+    description: "Transforma tus espacios de descanso en lugares acogedores y funcionales con nuestro servicio especializado.",
+    url: "/services/bedroom-upgrades",
+    image: "/images/services/remodelacion-general.jpg"
+  },
+  
+  // Instalación de Drywall
+  {
+    title: "Instalación y Reparación de Drywall",
+    description: "Servicio profesional de instalación y reparación de drywall para cualquier tipo de espacio.",
+    url: "/services/drywall-installation",
+    image: "/images/wall-texture-bg.jpg"
+  },
+  
+  // Instalación de Pisos
+  {
+    title: "Instalación de Pisos",
+    description: "Amplia variedad de opciones en pisos para adaptarse a cada estilo y necesidad de tu hogar o negocio.",
+    url: "/services/flooring",
+    image: "/images/services/remodelacion-general.jpg"
+  },
+  
+  // Tape & Bed
+  {
+    title: "Tape & Bed",
+    description: "Servicios profesionales de terminación de drywall con cinta y compuesto para juntas.",
+    url: "/services/tape-bed",
+    image: "/images/wall-texture-bg.jpg"
+  },
+  
+  // Textura de Paredes
+  {
+    title: "Textura de Paredes",
+    description: "Aplicación de texturas decorativas en paredes interiores para un acabado único.",
+    url: "/services/wall-texture",
+    image: "/images/wall-texture-bg.jpg"
+  },
+  
+  // Textura de Techos
+  {
+    title: "Textura de Techos",
+    description: "Texturizado profesional para techos interiores con diferentes estilos y acabados.",
+    url: "/services/ceiling-texture",
+    image: "/images/wall-texture-bg.jpg"
+  },
+  
+  // Cercas
+  {
+    title: "Instalación de Cercas",
+    description: "Diseño e instalación de cercas de madera, metal o vinilo para mayor privacidad y seguridad.",
+    url: "/services/fencing",
+    image: "/images/services/carpinteria.jpg"
+  },
+  
+  // Carpintería Personalizada
+  {
+    title: "Carpintería Personalizada",
+    description: "Trabajos de carpintería a medida para interiores y exteriores, incluyendo muebles y elementos decorativos.",
+    url: "/services/custom-woodwork",
+    image: "/images/services/carpinteria.jpg"
+  },
+  
+  // Estanterías y Almacenamiento
+  {
+    title: "Estanterías y Almacenamiento",
+    description: "Diseño e instalación de estanterías y soluciones de almacenamiento personalizadas.",
+    url: "/services/shelving",
+    image: "/images/services/carpinteria.jpg"
+  },
+  
+  // Paisajismo
+  {
+    title: "Paisajismo",
+    description: "Diseño y mantenimiento de áreas verdes, jardines y espacios exteriores.",
+    url: "/services/landscaping",
+    image: "/images/services/remodelacion-general.jpg"
+  },
+  
+  // Limpieza con Agua a Presión
+  {
+    title: "Limpieza con Agua a Presión",
+    description: "Limpieza profunda de superficies exteriores como fachadas, pisos y techos.",
+    url: "/services/power-washing",
+    image: "/images/services/remodelacion-general.jpg"
+  },
+  
+  // Mantenimiento de Áreas Verdes
+  {
+    title: "Mantenimiento de Áreas Verdes",
+    description: "Servicios de mantenimiento integral para jardines y áreas verdes.",
+    url: "/services/outdoor-maintenance",
+    image: "/images/services/remodelacion-general.jpg"
+  },
+  
+  // Diseño de Jardines
+  {
+    title: "Diseño de Jardines",
+    description: "Diseño personalizado de jardines y áreas verdes según tus preferencias y necesidades.",
+    url: "/services/garden-design",
+    image: "/images/services/remodelacion-general.jpg"
+  }
+];
+
+// Generar el JSON-LD para SEO
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": services.map((service, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Service",
+      "name": service.title,
+      "description": service.description,
+      "url": new URL(service.url, 'https://sevillaremodeling.com').toString()
+    }
+  }))
+});
+
+---
+
+<Layout title="Nuestros Servicios | Sevilla Remodeling LLC">
+  <style>
+    /* Estilos para la página de servicios */
+    .services-container { 
+      max-width: 1400px; 
+      margin: 0 auto; 
+      padding: 2rem; 
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .services-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .services-title { 
+      color: #1a365d; 
+      margin-bottom: 1.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    
+    .services-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #3b82f6;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+    
+    .services-description {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #4b5563;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    
+    /* Grid de servicios con separación adecuada */
+    .services-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+      gap: 2.5rem; 
+      margin-top: 3rem;
+    }
+    
+    /* Cards con espaciado correcto */
+    .service-card { 
+      background: white; 
+      border-radius: 1rem; 
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-image-container {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+    }
+    
+    .service-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .service-card:hover .service-image {
+      transform: scale(1.05);
+    }
+    
+    .service-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .service-description {
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ea580c;
+      font-weight: 500;
+      text-decoration: none;
+      width: fit-content;
+      transition: color 0.3s ease;
+    }
+    
+    .service-link:hover {
+      color: #2563eb;
+    }
+    
+    .service-link svg {
+      transition: transform 0.3s ease;
+    }
+    
+    .service-link:hover svg {
+      transform: translateX(5px);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .services-container {
+        padding: 1rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .services-title {
+        font-size: 2.2rem;
+      }
+      
+      .service-content {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .services-title {
+        font-size: 1.8rem;
+      }
+      
+      .service-title {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+  
+  <main>
+    <div class="services-container">
+      <header class="services-header">
+        <h1 class="services-title">
+          Nuestros Servicios
+        </h1>
+        <p class="services-description">
+          Soluciones integrales de remodelación para transformar tus espacios con calidad y estilo. 
+          Contamos con años de experiencia y un equipo especializado para cada proyecto.
+        </p>
+      </header>
+      
+      <div class="services-grid">
+        {services.map((service, index) => {
+          // Optimización de imágenes: cargar las primeras 6 con prioridad alta
+          const loading = index < 6 ? 'eager' : 'lazy';
+          const fetchPriority = index < 6 ? 'high' : 'auto';
+          
+          return (
+            <article 
+              class="service-card"
+              itemscope
+              itemtype="https://schema.org/Service"
+            >
+              <div class="service-image-container">
+                <img 
+                  src={service.image} 
+                  alt={`${service.title} - Imagen ilustrativa del servicio`} 
+                  class="service-image"
+                  loading={loading}
+                  fetchpriority={fetchPriority}
+                  width={400}
+                  height={240}
+                  decoding="async"
+                />
+              </div>
+              <div class="service-content">
+                <h2 class="service-title" itemprop="name">{service.title}</h2>
+                <p class="service-description" itemprop="description">{service.description}</p>
+                <a 
+                  href={service.url} 
+                  class="service-link"
+                  aria-label={`Ver más detalles sobre ${service.title}`}
+                >
+                  Ver más detalles
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    class="h-5 w-5" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path 
+                      fill-rule="evenodd" 
+                      d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
+                      clip-rule="evenodd" 
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </main>
+  
+  {/* Schema.org JSON-LD para SEO mejorado */}
+  <script type="application/ld+json" set:html={jsonLd} />
+</Layout>

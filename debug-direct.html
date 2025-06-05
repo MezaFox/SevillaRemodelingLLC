@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Servicios Directo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .debug-border { border: 2px solid red !important; }
+        .debug-bg { background-color: yellow !important; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="debug-border p-4 m-4">
+        <h1 class="text-2xl text-red-600">🔧 DEBUG MODE</h1>
+        <p>Si puedes ver esto, el HTML y CSS están funcionando.</p>
+    </div>
+
+    <section class="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 debug-border" 
+             id="nuestros-servicios" 
+             style="min-height: 400px;">
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 debug-bg p-4">
+                <span class="inline-block px-4 py-1.5 text-sm font-semibold text-orange-600 bg-orange-100 rounded-full mb-4">
+                    🔧 Nuestros Servicios - DEBUG
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Transformamos tus espacios con <span class="text-orange-500">excelencia</span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Soluciones integrales para darle vida a tus proyectos de construcción y remodelación.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 debug-border p-4">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl p-6 debug-border">
+                    <div class="h-56 bg-blue-200 mb-4 flex items-center justify-center">
+                        <span class="text-blue-800 font-bold">IMAGEN PINTURA</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pintura</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            ✅ Interior y Exterior
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            ✅ Texturas personalizadas
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            ✅ Preparación de superficies
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl p-6 debug-border">
+                    <div class="h-56 bg-orange-200 mb-4 flex items-center justify-center">
+                        <span class="text-orange-800 font-bold">IMAGEN REMODELACIÓN</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Remodelación</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            ✅ Baños modernos
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            ✅ Cocinas funcionales
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            ✅ Ampliaciones
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl p-6 debug-border">
+                    <div class="h-56 bg-green-200 mb-4 flex items-center justify-center">
+                        <span class="text-green-800 font-bold">IMAGEN CARPINTERÍA</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Carpintería</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            ✅ Muebles a medida
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            ✅ Clósets personalizados
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            ✅ Trabajos en madera
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="debug-border p-4 m-4 bg-green-100">
+        <h2 class="text-xl text-green-800">✅ Si puedes ver este contenido</h2>
+        <p>El problema no es con el HTML o CSS básico. El problema puede estar en:</p>
+        <ul class="list-disc pl-6 mt-2">
+            <li>Scripts de JavaScript conflictivos</li>
+            <li>Problemas con Astro rendering</li>
+            <li>Problemas con la librería AOS</li>
+            <li>CSS específico de la aplicación</li>
+        </ul>
+    </div>
+</body>
+</html> 
