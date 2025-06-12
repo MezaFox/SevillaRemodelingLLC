@@ -1,9 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-// Lista de servicios con imágenes locales y descripciones mejoradas
+// List of services with local images and improved descriptions
 const services = [
-  // Pintura
+  // Painting
   {
     title: "Pintura Residencial y Comercial",
     description: "Servicios profesionales de pintura para interiores y exteriores con los más altos estándares de calidad.",
@@ -11,124 +11,124 @@ const services = [
     image: "/images/services/pintura.jpg"
   },
   
-  // Remodelación de Baños
+  // Bathroom Remodeling
   {
-    title: "Remodelación de Baños",
-    description: "Transformación completa de baños con diseños modernos, funcionales y materiales de primera calidad.",
+    title: "Bathroom Remodeling",
+    description: "Complete bathroom transformation with modern, functional designs and premium materials.",
     url: "/services/bathroom-remodeling",
-    image: "/images/services/remodelacion-general.jpg"
+    image: "/images/services/bathroom.jpg"
   },
   
-  // Remodelación de Cocinas
+  // Kitchen Remodeling
   {
-    title: "Remodelación de Cocinas",
-    description: "Diseño y renovación de cocinas para crear espacios funcionales, modernos y acogedores.",
+    title: "Kitchen Remodeling",
+    description: "Kitchen design and renovation to create functional, modern, and welcoming spaces.",
     url: "/services/kitchen-renovations",
     image: "/images/services/remodelacion-general.jpg"
   },
   
-  // Mejoras de Dormitorios
+  // Bedroom Upgrades
   {
-    title: "Remodelación de Dormitorios",
-    description: "Transforma tus espacios de descanso en lugares acogedores y funcionales con nuestro servicio especializado.",
+    title: "Bedroom Remodeling",
+    description: "Transform your rest spaces into cozy and functional places with our specialized service.",
     url: "/services/bedroom-upgrades",
-    image: "/images/services/remodelacion-general.jpg"
+    image: "/images/services/domitorio2.jpg"
   },
   
-  // Instalación de Drywall
+  // Drywall Installation
   {
-    title: "Instalación y Reparación de Drywall",
-    description: "Servicio profesional de instalación y reparación de drywall para cualquier tipo de espacio.",
+    title: "Drywall Installation and Repair",
+    description: "Professional drywall installation and repair service for any type of space.",
     url: "/services/drywall-installation",
-    image: "/images/wall-texture-bg.jpg"
+    image: "/images/services/drywall.jpg"
   },
   
-  // Instalación de Pisos
+  // Flooring Installation
   {
-    title: "Instalación de Pisos",
-    description: "Amplia variedad de opciones en pisos para adaptarse a cada estilo y necesidad de tu hogar o negocio.",
+    title: "Flooring Installation",
+    description: "Wide variety of flooring options to suit every style and need for your home or business.",
     url: "/services/flooring",
-    image: "/images/services/remodelacion-general.jpg"
+    image: "/images/services/piso.jpg"
   },
   
   // Tape & Bed
   {
     title: "Tape & Bed",
-    description: "Servicios profesionales de terminación de drywall con cinta y compuesto para juntas.",
+    description: "Professional drywall finishing services with tape and joint compound.",
     url: "/services/tape-bed",
-    image: "/images/wall-texture-bg.jpg"
+    image: "/images/services/drawing.jpg"
   },
   
-  // Textura de Paredes
+  // Wall Texture
   {
-    title: "Textura de Paredes",
-    description: "Aplicación de texturas decorativas en paredes interiores para un acabado único.",
+    title: "Wall Texture",
+    description: "Application of decorative textures on interior walls for a unique finish.",
     url: "/services/wall-texture",
-    image: "/images/wall-texture-bg.jpg"
+    image: "/images/services/texture.jpg"
   },
   
-  // Textura de Techos
+  // Ceiling Texture
   {
-    title: "Textura de Techos",
-    description: "Texturizado profesional para techos interiores con diferentes estilos y acabados.",
+    title: "Ceiling Texture",
+    description: "Professional texturing for interior ceilings with different styles and finishes.",
     url: "/services/ceiling-texture",
-    image: "/images/wall-texture-bg.jpg"
+    image: "/images/services/textureceling.jpeg"
   },
   
-  // Cercas
+  // Fencing
   {
-    title: "Instalación de Cercas",
-    description: "Diseño e instalación de cercas de madera, metal o vinilo para mayor privacidad y seguridad.",
+    title: "Fence Installation",
+    description: "Design and installation of wood, metal, or vinyl fences for greater privacy and security.",
     url: "/services/fencing",
     image: "/images/services/carpinteria.jpg"
   },
   
-  // Carpintería Personalizada
+  // Custom Carpentry
   {
-    title: "Carpintería Personalizada",
-    description: "Trabajos de carpintería a medida para interiores y exteriores, incluyendo muebles y elementos decorativos.",
+    title: "Custom Carpentry",
+    description: "Custom carpentry work for interiors and exteriors, including furniture and decorative elements.",
     url: "/services/custom-woodwork",
-    image: "/images/services/carpinteria.jpg"
+    image: "/images/services/carpinteria.jpeg"
   },
   
-  // Estanterías y Almacenamiento
+  // Shelving and Storage
   {
-    title: "Estanterías y Almacenamiento",
-    description: "Diseño e instalación de estanterías y soluciones de almacenamiento personalizadas.",
+    title: "Shelving and Storage",
+    description: "Design and installation of custom shelving and storage solutions.",
     url: "/services/shelving",
-    image: "/images/services/carpinteria.jpg"
+    image: "/images/services/muebles.jpeg"
   },
   
-  // Paisajismo
+  // Landscaping
   {
-    title: "Paisajismo",
-    description: "Diseño y mantenimiento de áreas verdes, jardines y espacios exteriores.",
+    title: "Landscaping",
+    description: "Design and maintenance of green areas, gardens, and outdoor spaces.",
     url: "/services/landscaping",
-    image: "/images/services/remodelacion-general.jpg"
+    image: "/images/services/landscape.jpg"
   },
   
-  // Limpieza con Agua a Presión
+  // Power Washing
   {
-    title: "Limpieza con Agua a Presión",
-    description: "Limpieza profunda de superficies exteriores como fachadas, pisos y techos.",
+    title: "Power Washing",
+    description: "Deep cleaning of exterior surfaces such as facades, floors, and roofs.",
     url: "/services/power-washing",
-    image: "/images/services/remodelacion-general.jpg"
+    image: "/images/services/powerwashing.jpg"
   },
   
-  // Mantenimiento de Áreas Verdes
+  // Green Area Maintenance
   {
-    title: "Mantenimiento de Áreas Verdes",
-    description: "Servicios de mantenimiento integral para jardines y áreas verdes.",
+    title: "Green Area Maintenance",
+    description: "Comprehensive maintenance services for gardens and green areas.",
     url: "/services/outdoor-maintenance",
-    image: "/images/services/remodelacion-general.jpg"
+    image: "/images/services/greenArea.jpg"
   },
   
-  // Diseño de Jardines
+  // Garden Design
   {
-    title: "Diseño de Jardines",
-    description: "Diseño personalizado de jardines y áreas verdes según tus preferencias y necesidades.",
+    title: "Garden Design",
+    description: "Custom design of gardens and green areas according to your preferences and needs.",
     url: "/services/garden-design",
-    image: "/images/services/remodelacion-general.jpg"
+    image: "/images/services/garden.jpg"
   }
 ];
 
@@ -150,9 +150,9 @@ const jsonLd = JSON.stringify({
 
 ---
 
-<Layout title="Nuestros Servicios | Sevilla Remodeling LLC">
+<Layout title="Our Services | Sevilla Remodeling LLC">
   <style>
-    /* Estilos para la página de servicios */
+    /* Styles for the services page */
     .services-container { 
       max-width: 1400px; 
       margin: 0 auto; 
@@ -191,12 +191,33 @@ const jsonLd = JSON.stringify({
       line-height: 1.7;
     }
     
-    /* Grid de servicios con separación adecuada */
+    /* Grid de servicios con distribución 4x4 */
     .services-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-      gap: 2.5rem; 
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 2rem; 
       margin-top: 3rem;
+    }
+    
+    /* Responsive para tablets */
+    @media (max-width: 1200px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    /* Responsive para tablets pequeñas */
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Responsive para móviles */
+    @media (max-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* Cards con espaciado correcto */
@@ -220,7 +241,7 @@ const jsonLd = JSON.stringify({
     .service-image-container {
       position: relative;
       width: 100%;
-      height: 240px;
+      height: 200px;
       overflow: hidden;
     }
     
@@ -236,25 +257,25 @@ const jsonLd = JSON.stringify({
     }
     
     .service-content {
-      padding: 2rem;
+      padding: 1.5rem;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
     
     .service-title {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: #1f2937;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       line-height: 1.3;
     }
     
     .service-description {
       color: #6b7280;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
       flex-grow: 1;
     }
     
@@ -262,7 +283,7 @@ const jsonLd = JSON.stringify({
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: #ea580c;
+      color: #3b82f6;
       font-weight: 500;
       text-decoration: none;
       width: fit-content;
@@ -316,11 +337,11 @@ const jsonLd = JSON.stringify({
     <div class="services-container">
       <header class="services-header">
         <h1 class="services-title">
-          Nuestros Servicios
+          Our Services
         </h1>
         <p class="services-description bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-sm">
-          Soluciones integrales de remodelación para transformar tus espacios con calidad y estilo. 
-          Contamos con años de experiencia y un equipo especializado para cada proyecto.
+          Comprehensive remodeling solutions to transform your spaces with quality and style. 
+          We have years of experience and a specialized team for each project.
         </p>
       </header>
       
@@ -339,7 +360,7 @@ const jsonLd = JSON.stringify({
               <div class="service-image-container">
                 <img 
                   src={service.image} 
-                  alt={`${service.title} - Imagen ilustrativa del servicio`} 
+                  alt={`${service.title} - Service illustrative image`} 
                   class="service-image"
                   loading={loading}
                   fetchpriority={fetchPriority}
@@ -354,9 +375,9 @@ const jsonLd = JSON.stringify({
                 <a 
                   href={service.url} 
                   class="service-link"
-                  aria-label={`Ver más detalles sobre ${service.title}`}
+                  aria-label={`See more details about ${service.title}`}
                 >
-                  Ver más detalles
+                  See more details
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     class="h-5 w-5" 

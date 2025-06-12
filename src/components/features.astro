@@ -1,89 +1,79 @@
 ---
-// Función auxiliar para obtener íconos
-const getServiceIcon = (iconName) => {
-  const icons = {
-    'mdi:paint': 'M20.71,4.63L19.37,3.29C19,2.9 18.35,2.9 17.96,3.29L9,12.25L11.75,15L20.71,6.04C21.1,5.65 21.1,5 20.71,4.63M7,14A3,3 0 0,0 4,17C4,18.31 2.84,19 2,19C2.92,20.22 4.5,21 6,21A4,4 0 0,0 10,17A3,3 0 0,0 7,14Z',
-    'mdi:home-renovation': 'M12,3L2,12H5V20H19V12H22L12,3M11.21,14.59L10.5,15.3L8.29,13.08L9.71,11.66L10.5,12.5L12.71,10.29L14.12,11.71L11.21,14.59M16.5,11.08L13.5,8.08L15.66,5.92L18.68,8.94L16.5,11.08M17.54,18L14.5,15H9.5L6.5,18H5V12.92L8.5,9.42L15.5,16.42V18H17.54Z',
-    'mdi:wall': 'M3,16H12V21H10V18H6V21H4V16H3M18,16H20V21H18V16M18,3H20V14H18V3M3,3H16V14H3V3M5,5V12H14V5H5Z',
-    'mdi:table-furniture': 'M20,9H18.7V4H20V2H4V4H5.3V9H4V11H5.3V20H2V22H22V20H18.7V11H20V9M15.3,20H8.7V11H15.3V20Z',
-    'mdi:floor-plan': 'M10,5V10H9V5H5V19H9V14H11V19H13V13H15V19H19V5H10M17,17H15V15H17V17M17,13H15V11H17V13M13,11H11V9H13V11M13,7H11V5H13V7Z',
-    'mdi:tree': 'M11,21V16.74C10.53,16.91 10.03,17 9.5,17C6.46,17 4,14.54 4,11.5C4,9.5 5.2,7.81 7,7.17C7,4.24 9.24,2 12,2C14.76,2 17,4.24 17,7.17C18.8,7.81 20,9.5 20,11.5C20,14.54 17.54,17 14.5,17C13.97,17 13.47,16.91 13,16.74V21H11Z'
-  };
-  return icons[iconName] || '';
-};
+// Importar los iconos directamente desde la biblioteca
+import { Icon } from "astro-icon/components";
 
-// Datos de servicios
+// Services data
 const services = [
   {
-    category: "Pintura",
+    category: "Painting",
     icon: "mdi:paint",
-    items: ["Interior y Exterior", "Texturas personalizadas", "Preparación de superficies", "Acabados de lujo"],
+    items: ["Interior and Exterior", "Custom Textures", "Surface Preparation", "Luxury Finishes"],
     image: "/images/services/pintura.jpg",
     color: "from-blue-500 to-blue-600"
   },
   {
-    category: "Remodelación",
-    icon: "mdi:home-renovation",
-    items: ["Baños modernos", "Cocinas funcionales", "Ampliaciones", "Renovaciones integrales"],
+    category: "Remodeling",
+    icon: "mdi:home",
+    items: ["Modern Bathrooms", "Functional Kitchens", "Extensions", "Complete Renovations"],
     image: "/images/services/remodelacion-general.jpg",
-    color: "from-orange-500 to-orange-600"
+    color: "from-blue-500 to-blue-600"
   },
   {
-    category: "Drywall & Texturas",
+    category: "Drywall & Textures",
     icon: "mdi:wall",
-    items: ["Instalación profesional", "Reparaciones", "Diseño de techos", "Acabados especiales"],
-    image: "/images/wall-texture-bg.jpg",
-    color: "from-amber-500 to-amber-600"
+    items: ["Professional Installation", "Repairs", "Ceiling Design", "Special Finishes"],
+    image: "/images/services/texture.jpg",
+    color: "from-blue-500 to-blue-600"
   },
   {
-    category: "Carpintería",
+    category: "Carpentry",
     icon: "mdi:table-furniture",
-    items: ["Muebles a medida", "Clósets personalizados", "Trabajos en madera", "Diseño de interiores"],
+    items: ["Custom Furniture", "Custom Closets", "Woodworking", "Interior Design"],
     image: "/images/services/carpinteria.jpg",
-    color: "from-emerald-500 to-emerald-600"
+    color: "from-blue-500 to-blue-600"
   },
   {
-    category: "Pisos",
+    category: "Flooring",
     icon: "mdi:floor-plan",
-    items: ["Instalación profesional", "Renovación de pisos", "Acabados de lujo", "Reparaciones"],
+    items: ["Professional Installation", "Floor Renovation", "Luxury Finishes", "Repairs"],
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop&h=400",
-    color: "from-rose-500 to-rose-600"
+    color: "from-blue-500 to-blue-600"
   },
   {
-    category: "Exteriores",
+    category: "Exteriors",
     icon: "mdi:tree",
-    items: ["Paisajismo", "Cercas y pérgolas", "Áreas sociales", "Mantenimiento"],
+    items: ["Landscaping", "Fences and Pergolas", "Social Areas", "Maintenance"],
     image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1000&auto=format&fit=crop&h=400",
-    color: "from-green-500 to-green-600"
+    color: "from-blue-500 to-blue-600"
   }
 ];
 ---
 
 <section 
-  class="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100"
-  id="nuestros-servicios"
-  aria-labelledby="servicios-titulo"
+  class="relative py-20 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100"
+  id="our-services"
+  aria-labelledby="services-title"
   style="min-height: 400px;"
 >
-  <div class="absolute inset-0 bg-grid-gray-200/50 [mask-image:linear-gradient(0deg,transparent,white)]" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-grid-blue-200/30 [mask-image:linear-gradient(0deg,transparent,white)]" aria-hidden="true"></div>
   
   <div class="container mx-auto px-4 relative z-10">
     <header class="text-center max-w-4xl mx-auto mb-16">
-      <span class="inline-block px-4 py-1.5 text-sm font-semibold text-orange-600 bg-orange-100 rounded-full mb-4">
-        Nuestros Servicios
+      <span class="inline-block px-4 py-1.5 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-4">
+        Our Services
       </span>
-      <h2 id="servicios-titulo" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-        Transformamos tus espacios con <span class="text-orange-500">excelencia</span>
+      <h2 id="services-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Transforming your spaces with <span class="text-blue-500">excellence</span>
       </h2>
       <p class="text-lg text-gray-600 bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-sm">
-        Soluciones integrales para darle vida a tus proyectos de construcción y remodelación con los más altos estándares de calidad.
+        Comprehensive solutions to bring your construction and remodeling projects to life with the highest quality standards.
       </p>
     </header>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
       {services.map((service, index) => (
         <article 
-          class="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2"
+          class="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
 
           role="listitem"
           tabindex="0"
@@ -100,14 +90,13 @@ const services = [
               decoding="async"
               fetchpriority={index < 3 ? 'high' : 'auto'}
             />
-            <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
-              <div 
-                class={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-gradient-to-r ${service.color} text-white`}
-                aria-hidden="true"
-              >
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d={getServiceIcon(service.icon)} />
-                </svg>
+            <div class="absolute bottom-4 left-4 flex items-center gap-3 z-20">
+              <div class="bg-white/20 backdrop-blur-md p-2 rounded-full">
+                <Icon 
+                  name={service.icon} 
+                  class="w-6 h-6 text-white" 
+                  aria-hidden="true"
+                />
               </div>
               <h3 class="text-2xl font-bold text-white">{service.category}</h3>
             </div>
@@ -138,11 +127,11 @@ const services = [
             </ul>
             <div class="mt-6 pt-6 border-t border-gray-100">
               <a 
-                href={`/services/${service.category.toLowerCase().replace(/\s+/g, '-')}`}
-                class="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium group"
-                aria-label={`Ver más detalles sobre ${service.category}`}
+                href="/services"
+                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
+                aria-label={`View more services like ${service.category}`}
               >
-                Ver detalles
+                View details
                 <svg 
                   class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" 
                   fill="none" 
@@ -162,9 +151,9 @@ const services = [
     <div class="text-center mt-16">
       <a 
         href="/services" 
-        class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-orange-500 hover:bg-orange-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+        class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
       >
-        Ver todos nuestros servicios
+        View all our services
         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
         </svg>
@@ -176,37 +165,12 @@ const services = [
     .bg-grid-gray-200\/50 {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(229 231 235 / 0.5)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
     }
-    @media (prefers-color-scheme: dark) {
-      .dark .bg-grid-gray-200\/50 {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(55 65 81 / 0.5)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
-      }
-    }
     
-    /* Mejoras de accesibilidad */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-    
-    /* Enfoque visible para teclado */
+    /* Visible focus for keyboard */
     :focus-visible {
       outline: 2px solid #f97316;
       outline-offset: 2px;
       border-radius: 0.25rem;
-    }
-    
-    /* Mejor contraste para texto */
-    @media (prefers-contrast: more) {
-      body {
-        --tw-text-opacity: 1;
-        color: rgb(15 23 42 / var(--tw-text-opacity));
-      }
     }
   </style>
 </section>

@@ -11,122 +11,7 @@ const menuitems = [
   },
   {
     title: "Services",
-    path: "#",
-    children: [
-      // Pintura
-      { 
-        title: "Pintura", 
-        path: "/services/painting",
-        icon: "mdi:format-paint"
-      },
-      
-      // Remodelación General
-      { 
-        title: "Remodelación General", 
-        isHeader: true 
-      },
-      { 
-        title: "Bathroom Remodeling", 
-        path: "/services/bathroom-remodeling",
-        indent: true
-      },
-      { 
-        title: "Kitchen Renovations", 
-        path: "/services/kitchen-renovations",
-        indent: true
-      },
-      { 
-        title: "Bedroom Upgrades", 
-        path: "/services/bedroom-upgrades",
-        indent: true
-      },
-      { 
-        title: "Drywall Installation & Repair", 
-        path: "/services/drywall-installation",
-        indent: true
-      },
-      { 
-        title: "Flooring", 
-        path: "/services/flooring",
-        indent: true
-      },
-      
-      // Tape & Bed
-      { 
-        title: "Tape & Bed", 
-        isHeader: true 
-      },
-      { 
-        title: "Tape & Bed", 
-        path: "/services/tape-bed",
-        indent: true
-      },
-      { 
-        title: "Wall Texture", 
-        path: "/services/wall-texture",
-        indent: true
-      },
-      { 
-        title: "Ceiling Texture", 
-        path: "/services/ceiling-texture",
-        indent: true
-      },
-      
-      // Carpintería
-      { 
-        title: "Carpintería", 
-        isHeader: true 
-      },
-      { 
-        title: "Fencing", 
-        path: "/services/fencing",
-        indent: true
-      },
-      { 
-        title: "Custom Woodwork", 
-        path: "/services/custom-woodwork",
-        indent: true
-      },
-      { 
-        title: "Shelving & Storage", 
-        path: "/services/shelving",
-        indent: true
-      },
-      
-      // Otros Servicios
-      { 
-        title: "Otros Servicios", 
-        isHeader: true 
-      },
-      { 
-        title: "Landscaping", 
-        path: "/services/landscaping",
-        indent: true
-      },
-      { 
-        title: "Power Washing", 
-        path: "/services/power-washing",
-        indent: true
-      },
-      { 
-        title: "Garden Design", 
-        path: "/services/garden-design",
-        indent: true
-      },
-      { 
-        title: "Outdoor Maintenance", 
-        path: "/services/outdoor-maintenance",
-        indent: true
-      },
-      
-      // Ver Todos
-      { 
-        title: "Ver Todos los Servicios", 
-        path: "/services",
-        icon: "mdi:arrow-right",
-        highlight: true
-      }
-    ],
+    path: "/services",
   },
   {
     title: "About",
@@ -148,10 +33,16 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-orange-600">Sevilla</span><span
-            class="text-slate-800">Remodeling</span
-          >
+        <a href="/" class="flex items-center gap-3 text-lg">
+          <img 
+            src="/images/logo.png" 
+            alt="Sevilla Remodeling Logo" 
+            class="h-10 w-auto"
+          />
+          <div>
+            <span class="font-bold text-blue-600">Sevilla</span><span
+              class="text-slate-800">Remodeling</span>
+          </div>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -177,7 +68,7 @@ const menuitems = [
                       class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
                       <span> {item.title}</span>
                       {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] font-semibold uppercase text-white bg-orange-500 rounded-full">
+                        <span class="ml-1 px-2 py-0.5 text-[10px] font-semibold uppercase text-white bg-blue-500 rounded-full">
                           Free
                         </span>
                       )}
@@ -189,20 +80,20 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="https://wa.me/+1234567890" style="muted" block size="md">WhatsApp</Link>
-          <Link href="sms:+1234567890" size="md" block>iMessage</Link>
+          <Link href="https://wa.me/+14693162874" class="bg-green-500 hover:bg-green-600 text-white" block size="md">WhatsApp</Link>
+          <Link href="sms:+14693162874" size="md" block>iMessage</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="https://wa.me/+1234567890" class="flex items-center gap-1 text-gray-600 hover:text-orange-600 transition-colors">
+        <a href="https://wa.me/+14693162874" class="flex items-center gap-1 text-green-600 hover:text-green-700 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
           WhatsApp
         </a>
-        <Link href="/contact" size="md" class="bg-orange-500 hover:bg-orange-600 transition-colors">Get a Free Estimate</Link>
+        <Link href="/contact" size="md" class="bg-blue-500 hover:bg-blue-600 transition-colors">Get a Free Estimate</Link>
       </div>
     </div>
   </header>

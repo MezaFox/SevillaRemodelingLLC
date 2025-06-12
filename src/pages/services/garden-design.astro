@@ -4,62 +4,268 @@ import { Icon } from "astro-icon/components";
 import Link from "@/components/ui/link.astro";
 ---
 
-<Layout title="Diseño de Jardines | Sevilla Remodeling LLC">
-  <main class="container mx-auto px-4 py-12">
-    <div class="mb-8">
-      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
-        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
-        Volver a Servicios
-      </Link>
-    </div>
+<Layout title="Garden Design | Sevilla Remodeling LLC">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                  url('/images/services/garden.jpg') center/cover no-repeat fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .content-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      overflow: hidden;
+      border-left: 4px solid #3b82f6;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+      background: linear-gradient(135deg, #3b82f6, #2563eb, #1e40af);
+      color: white;
+      padding: 2rem;
+      position: relative;
+    }
+    
+    .card-body {
+      padding: 2rem;
+    }
+    
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .page-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, transparent);
+    }
+    
+    .service-text {
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    @media (max-width: 1200px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, auto);
+      }
+    }
+    
+    .service-item {
+      background: white;
+      border-radius: 8px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-section {
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+      border: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    .feature-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-button {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    }
+    
+    .cta-button:hover {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 6px 10px rgba(37, 99, 235, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+    }
+  </style>
+  
+  <div class="hero-section">
+    <div class="container mx-auto px-4">
+      <div class="mb-8">
+        <Link href="/services" class="back-button flex items-center text-white hover:text-blue-300 transition-colors">
+          <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+          Back to Services
+        </Link>
+      </div>
 
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <div class="p-8">
-        <div class="flex items-center mb-6">
-          <span class="text-5xl mr-4">🌿</span>
-          <h1 class="text-3xl md:text-4xl font-bold">Diseño de Jardines</h1>
+      <div class="content-card">
+        <div class="card-header">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl page-title">Garden Design</h1>
+          <p class="page-subtitle">Transforming outdoor spaces into custom oases</p>
         </div>
         
-        <div class="prose max-w-none">
-          <p class="text-lg mb-6">
-            En Sevilla Remodeling LLC, nos especializamos en el diseño y creación de jardines hermosos y funcionales. Nuestro equipo de expertos puede transformar cualquier espacio exterior en un oasis personalizado que refleje su estilo y satisfaga sus necesidades.
+        <div class="card-body">
+          <p class="text-lg service-text">
+            At Sevilla Remodeling LLC, we specialize in designing and creating beautiful, functional gardens. Our team of experts can transform any outdoor space into a personalized oasis that reflects your style and meets your needs.
           </p>
           
-          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Diseño de Jardines Incluyen:</h2>
+          <h2 class="text-2xl section-title mt-10">Our Services</h2>
           
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Consulta y planificación de diseño</li>
-            <li>Selección de plantas y árboles</li>
-            <li>Diseño de jardines temáticos</li>
-            <li>Jardines de bajo mantenimiento</li>
-            <li>Jardines xeriscápicos (ahorro de agua)</li>
-            <li>Jardines de mariposas y polinizadores</li>
-            <li>Huertos y jardines comestibles</li>
-            <li>Integración de elementos decorativos</li>
-          </ul>
+          <div class="services-grid">
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Consultation & Planning</h3>
+              <p class="text-sm text-gray-600 mt-1">Custom design for your space</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Plant Selection</h3>
+              <p class="text-sm text-gray-600 mt-1">Suitable plants and trees for your garden</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Theme Gardens</h3>
+              <p class="text-sm text-gray-600 mt-1">Special designs based on your preferences</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Low Maintenance</h3>
+              <p class="text-sm text-gray-600 mt-1">Practical and easy-to-maintain gardens</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Xeriscape Gardens</h3>
+              <p class="text-sm text-gray-600 mt-1">Water-saving designs</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Pollinator Gardens</h3>
+              <p class="text-sm text-gray-600 mt-1">Attract butterflies and other pollinators</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Edible Gardens</h3>
+              <p class="text-sm text-gray-600 mt-1">Grow your own food</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Decorative Elements</h3>
+              <p class="text-sm text-gray-600 mt-1">Integration of fountains, sculptures, and more</p>
+            </div>
+          </div>
           
-          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          <div class="feature-section">
+            <h2 class="text-2xl section-title mb-3">Why Choose Us?</h2>
+            
+            <ul class="feature-list">
+              <li>Custom designs based on your preferences</li>
+              <li>Expert knowledge of local plants</li>
+              <li>Sustainable and eco-friendly solutions</li>
+              <li>Consideration of climate and soil conditions</li>
+              <li>Meticulous attention to detail</li>
+              <li>Transparent pricing</li>
+            </ul>
+          </div>
           
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Diseños personalizados según sus preferencias</li>
-            <li>Conocimiento experto de plantas locales</li>
-            <li>Soluciones sostenibles y ecológicas</li>
-            <li>Consideración del clima y condiciones del suelo</li>
-            <li>Atención meticulosa a los detalles</li>
-            <li>Presupuestos transparentes</li>
-          </ul>
-          
-          <div class="mt-12">
-            <h2 class="text-2xl font-semibold mb-4">¿Listo para crear el jardín de sus sueños?</h2>
+          <div class="cta-section">
+            <h2 class="text-2xl cta-title">Ready to create the garden of your dreams?</h2>
+            <p class="mb-6 text-gray-700">Contact us today for a free, no-obligation consultation</p>
             <Link 
               href="/contact" 
-              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
-              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
-              Solicitar Presupuesto Gratuito
+              class="inline-flex items-center cta-button text-white font-medium py-3 px-8 rounded-full transition-all">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-3" />
+              Request Free Quote
             </Link>
           </div>
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </Layout>

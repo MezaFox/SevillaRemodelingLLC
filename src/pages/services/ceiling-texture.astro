@@ -4,58 +4,277 @@ import { Icon } from "astro-icon/components";
 import Link from "@/components/ui/link.astro";
 ---
 
-<Layout title="Textura de Techos | Sevilla Remodeling LLC">
-  <main class="container mx-auto px-4 py-12">
-    <div class="mb-8">
-      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
-        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
-        Volver a Servicios
-      </Link>
-    </div>
+<Layout title="Ceiling Texture | Sevilla Remodeling LLC">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                  url('/images/services/ceiling.jpg') center/cover no-repeat fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .content-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #3b82f6;
+    }
+    
+    .card-header {
+      background: rgba(59, 130, 246, 0.9);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+      opacity: 0.6;
+    }
+    
+    .card-body {
+      padding: 2.5rem;
+    }
+    
+    .back-button {
+      transition: all 0.3s ease;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+    
+    .back-button:hover {
+      transform: translateX(-5px);
+    }
+    
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.5px;
+      margin: 0;
+      position: relative;
+      z-index: 10;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .page-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #1e40af; /* blue-800 */
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #3b82f6; /* blue-500 */
+    }
+    
+    .service-text {
+      font-weight: 400;
+      line-height: 1.8;
+      color: #1f2937;
+      letter-spacing: 0.2px;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .service-item {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+    
+    .service-item:hover {
+      background: rgba(255, 255, 255, 0.8);
+      transform: translateY(-3px);
+      border-left: 3px solid #3b82f6; /* blue-500 */
+    }
+    
+    .benefits-container {
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .feature-list li {
+      position: relative;
+      padding-left: 2rem;
+      font-weight: 400;
+      color: #374151;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #3b82f6; /* blue-500 */
+      font-weight: bold;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      color: #1e40af; /* blue-800 */
+      margin-bottom: 1rem;
+    }
+    
+    .cta-button {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      border: none;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    }
+  </style>
 
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <div class="p-8">
-        <div class="flex items-center mb-6">
-          <span class="text-5xl mr-4">🧱</span>
-          <h1 class="text-3xl md:text-4xl font-bold">Textura de Techos</h1>
+  <main class="hero-section">
+    <div class="container mx-auto px-4">
+      <div class="mb-8">
+        <Link href="/services" class="back-button flex items-center text-white hover:text-blue-300 transition-colors">
+          <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+          Back to Services
+        </Link>
+      </div>
+
+      <div class="content-card">
+        <div class="card-header">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl page-title">Ceiling Texture</h1>
+          <p class="page-subtitle">Professional ceiling texture application</p>
         </div>
         
-        <div class="prose max-w-none">
-          <p class="text-lg mb-6">
-            En Sevilla Remodeling LLC, somos expertos en la aplicación de texturas para techos. Nuestro equipo de profesionales puede crear diversos acabados texturizados que añaden dimensión y carácter a sus espacios.
+        <div class="card-body">
+          <p class="text-lg service-text">
+            At Sevilla Remodeling LLC, we specialize in ceiling texture application. Our team of professionals can create various textured finishes that add dimension and character to your spaces.
           </p>
           
-          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Textura de Techos Incluyen:</h2>
+          <h2 class="text-2xl section-title mt-10">Our Services</h2>
           
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Textura tipo palomitas de maíz (popcorn)</li>
-            <li>Textura de salpicado (splatter)</li>
-            <li>Textura de estuco (knockdown)</li>
-            <li>Textura de naranja (orange peel)</li>
-            <li>Remoción de texturas antiguas</li>
-            <li>Reparación de texturas existentes</li>
-            <li>Igualación de texturas en reparaciones</li>
-            <li>Preparación y aplicación de texturas</li>
-          </ul>
+          <div class="services-grid">
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Popcorn Texture</h3>
+              <p class="text-sm text-gray-600 mt-1">Classic texture with popcorn-like appearance</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Splatter Texture</h3>
+              <p class="text-sm text-gray-600 mt-1">Dynamic texture with small to medium splatter patterns</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Stucco Texture</h3>
+              <p class="text-sm text-gray-600 mt-1">Stucco-like finish with flattened appearance</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Orange Peel Texture</h3>
+              <p class="text-sm text-gray-600 mt-1">Light and subtle texture resembling orange peel</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Texture Removal</h3>
+              <p class="text-sm text-gray-600 mt-1">Removal of old or damaged textures</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Texture Repair</h3>
+              <p class="text-sm text-gray-600 mt-1">Fixing damaged or inconsistent textures</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Texture Matching</h3>
+              <p class="text-sm text-gray-600 mt-1">Perfect matching of existing textures for repairs</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Preparation & Application</h3>
+              <p class="text-sm text-gray-600 mt-1">Complete surface preparation and texture application</p>
+            </div>
+          </div>
           
-          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          <div class="benefits-container">
+            <h2 class="text-2xl section-title mb-3">Why Choose Us?</h2>
+            
+            <ul class="feature-list">
+              <li>Experience with various texture types</li>
+              <li>Uniform and professional application</li>
+              <li>High-quality materials</li>
+              <li>Meticulous attention to detail</li>
+              <li>Clean during and after the job</li>
+              <li>Transparent pricing</li>
+            </ul>
+          </div>
           
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Experiencia en diversos tipos de texturas</li>
-            <li>Aplicación uniforme y profesional</li>
-            <li>Materiales de alta calidad</li>
-            <li>Atención meticulosa a los detalles</li>
-            <li>Limpieza durante y después del trabajo</li>
-            <li>Presupuestos transparentes</li>
-          </ul>
-          
-          <div class="mt-12">
-            <h2 class="text-2xl font-semibold mb-4">¿Listo para mejorar sus techos?</h2>
+          <div class="cta-section">
+            <h2 class="text-2xl cta-title">Ready to improve your ceilings?</h2>
+            <p class="mb-6 text-gray-700">Contact us today for a free, no-obligation consultation</p>
             <Link 
               href="/contact" 
-              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
-              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
-              Solicitar Presupuesto Gratuito
+              class="inline-flex items-center cta-button text-white font-medium py-3 px-8 rounded-full transition-all">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-3" />
+              Request Free Quote
             </Link>
           </div>
         </div>

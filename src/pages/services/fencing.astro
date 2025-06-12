@@ -4,62 +4,253 @@ import { Icon } from "astro-icon/components";
 import Link from "@/components/ui/link.astro";
 ---
 
-<Layout title="Servicios de Cercado | Sevilla Remodeling LLC">
-  <main class="container mx-auto px-4 py-12">
-    <div class="mb-8">
-      <Link href="/services" class="flex items-center text-blue-600 hover:underline">
-        <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
-        Volver a Servicios
-      </Link>
-    </div>
+<Layout title="Fencing Services | Sevilla Remodeling LLC">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                  url('/images/services/fencing.jpg') center/cover no-repeat fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .content-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      overflow: hidden;
+      border-left: 4px solid #3b82f6;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+      background: linear-gradient(135deg, #3b82f6, #2563eb, #1e40af);
+      color: white;
+      padding: 2rem;
+      position: relative;
+    }
+    
+    .card-body {
+      padding: 2rem;
+    }
+    
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .page-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, transparent);
+    }
+    
+    .service-text {
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .service-item {
+      background: white;
+      border-radius: 8px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-section {
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+      border: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    .feature-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-button {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    }
+    
+    .cta-button:hover {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 6px 10px rgba(37, 99, 235, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+    }
+  </style>
+  
+  <div class="hero-section">
+    <div class="container mx-auto px-4">
+      <div class="mb-8">
+        <Link href="/services" class="back-button flex items-center text-white hover:text-blue-300 transition-colors">
+          <Icon name="mdi:arrow-left" class="w-5 h-5 mr-2" />
+          Back to Services
+        </Link>
+      </div>
 
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <div class="p-8">
-        <div class="flex items-center mb-6">
-          <span class="text-5xl mr-4">🪚</span>
-          <h1 class="text-3xl md:text-4xl font-bold">Cercas y Vallas</h1>
+      <div class="content-card">
+        <div class="card-header">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl page-title">Fences & Gates</h1>
+          <p class="page-subtitle">Professional fence installation for security and aesthetics</p>
         </div>
         
-        <div class="prose max-w-none">
-          <p class="text-lg mb-6">
-            En Sevilla Remodeling LLC, ofrecemos servicios profesionales de instalación y reparación de cercas y vallas. Nuestro equipo de expertos puede ayudarle a mejorar la privacidad, seguridad y estética de su propiedad con cercas de alta calidad.
+        <div class="card-body">
+          <p class="text-lg service-text">
+            At Sevilla Remodeling LLC, we offer professional fence installation and repair services. Our team of experts can help you improve the privacy, security, and aesthetics of your property with high-quality fencing solutions.
           </p>
           
-          <h2 class="text-2xl font-semibold mt-8 mb-4">Nuestros Servicios de Cercado Incluyen:</h2>
+          <h2 class="text-2xl section-title mt-10">Our Services</h2>
           
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Cercas de madera (privacidad, decorativas)</li>
-            <li>Cercas de vinilo</li>
-            <li>Cercas de malla ciclónica</li>
-            <li>Cercas de aluminio y hierro forjado</li>
-            <li>Puertas y portones</li>
-            <li>Reparación y mantenimiento de cercas</li>
-            <li>Reemplazo de postes y paneles</li>
-            <li>Tratamiento y sellado de cercas de madera</li>
-          </ul>
+          <div class="services-grid">
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Wood Fencing</h3>
+              <p class="text-sm text-gray-600 mt-1">Privacy and decorative designs</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Vinyl Fencing</h3>
+              <p class="text-sm text-gray-600 mt-1">Durable and low maintenance</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Chain Link Fencing</h3>
+              <p class="text-sm text-gray-600 mt-1">Security and durability</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Aluminum Fencing</h3>
+              <p class="text-sm text-gray-600 mt-1">Elegant and corrosion-resistant</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Gates & Entrances</h3>
+              <p class="text-sm text-gray-600 mt-1">Secure and aesthetic access points</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Fence Repair</h3>
+              <p class="text-sm text-gray-600 mt-1">Fixing damaged fences</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Post Replacement</h3>
+              <p class="text-sm text-gray-600 mt-1">Replacement of structural elements</p>
+            </div>
+            
+            <div class="service-item">
+              <h3 class="font-medium text-gray-800">Wood Treatment</h3>
+              <p class="text-sm text-gray-600 mt-1">Sealing and protecting wooden fences</p>
+            </div>
+          </div>
           
-          <h2 class="text-2xl font-semibold mt-8 mb-4">¿Por Qué Elegirnos?</h2>
+          <div class="feature-section">
+            <h2 class="text-2xl section-title mb-3">Why Choose Us?</h2>
+            
+            <ul class="feature-list">
+              <li>Experience with various fence types</li>
+              <li>Professional and lasting installation</li>
+              <li>High-quality materials</li>
+              <li>Custom designs based on your needs</li>
+              <li>Compliance with local codes and regulations</li>
+              <li>Transparent pricing</li>
+            </ul>
+          </div>
           
-          <ul class="list-disc pl-6 space-y-2">
-            <li>Experiencia en diversos tipos de cercas</li>
-            <li>Instalación profesional y duradera</li>
-            <li>Materiales de alta calidad</li>
-            <li>Diseños personalizados según sus necesidades</li>
-            <li>Cumplimiento de códigos y regulaciones locales</li>
-            <li>Presupuestos transparentes</li>
-          </ul>
-          
-          <div class="mt-12">
-            <h2 class="text-2xl font-semibold mb-4">¿Listo para mejorar su propiedad con una nueva cerca?</h2>
+          <div class="cta-section">
+            <h2 class="text-2xl cta-title">Ready to enhance your property with a new fence?</h2>
+            <p class="mb-6 text-gray-700">Contact us today for a free, no-obligation consultation</p>
             <Link 
               href="/contact" 
-              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
-              <Icon name="mdi:email-outline" class="w-5 h-5 mr-2" />
-              Solicitar Presupuesto Gratuito
+              class="inline-flex items-center cta-button text-white font-medium py-3 px-8 rounded-full transition-all">
+              <Icon name="mdi:email-outline" class="w-5 h-5 mr-3" />
+              Request Free Quote
             </Link>
           </div>
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </Layout>

@@ -5,7 +5,7 @@ interface Props {
   height?: string;
 }
 
-const { imageUrl, altText = "Imagen decorativa", height = "500px" } = Astro.props;
+const { imageUrl, altText = "Decorative image", height = "500px" } = Astro.props;
 ---
 
 <div class="scroll-reveal-container relative w-full overflow-hidden" style={`height: ${height};`}>
@@ -39,7 +39,7 @@ const { imageUrl, altText = "Imagen decorativa", height = "500px" } = Astro.prop
 </style>
 
 <script>
-  // Script para la animación de revelación al hacer scroll
+  // Script for scroll reveal animation
   document.addEventListener('DOMContentLoaded', () => {
     const revealImage = document.querySelector('.scroll-reveal-image');
     
