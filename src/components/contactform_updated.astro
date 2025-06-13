@@ -1,5 +1,9 @@
 ---
 import Button from "./ui/button.astro";
+
+// Determinar la URL base para la redirección
+const baseUrl = import.meta.env.PROD ? 'https://sevillaremodeling.com' : '';
+const redirectUrl = `${baseUrl}/thank-you`;
 ---
 
 <!-- Formulario personalizado simple con manejo de envío por JavaScript -->
@@ -34,7 +38,7 @@ import Button from "./ui/button.astro";
     <input type="hidden" name="_subject" value="New Quote Request - Sevilla Remodeling">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://sevillaremodeling.com/thank-you">
+    <input type="hidden" name="_next" value={redirectUrl}>
     
     <!-- Name -->
     <div class="mb-5">
