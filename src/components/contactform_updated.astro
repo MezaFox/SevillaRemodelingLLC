@@ -104,13 +104,21 @@ import Button from "./ui/button.astro";
   </p>
 </div>
 
-<script>
+<script is:inline>
   document.addEventListener('DOMContentLoaded', function() {
+    // Obtener referencias a los elementos del DOM
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
     const errorMessage = document.getElementById('errorMessage');
     const submitButton = document.getElementById('submitButton');
     
+    // Verificar que todos los elementos existan antes de continuar
+    if (!form || !successMessage || !errorMessage || !submitButton) {
+      console.error('No se encontraron todos los elementos necesarios del formulario');
+      return;
+    }
+    
+    // Ahora podemos usar los elementos con seguridad
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       
