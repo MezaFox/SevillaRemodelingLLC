@@ -1,21 +1,27 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+
+// Verificar si estamos en la página de servicios
+const currentPath = Astro.url.pathname;
+const isServicesPage = currentPath === "/services" || currentPath === "/services/";
 ---
 
-<div class="fixed inset-0 -z-10 overflow-hidden">
-  <!-- Imagen de fondo única -->
-  <div class="absolute inset-0 w-full h-full">
-    <img 
-      src="/images/backgrounds/home-bg.jpg" 
-      alt="Casa de lujo recién remodelada" 
-      class="w-full h-full object-cover"
-      loading="eager"
-    />
-    <!-- Superposición clara para mejorar la legibilidad del contenido -->
-    <div class="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
+{!isServicesPage && (
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <!-- Imagen de fondo única -->
+    <div class="absolute inset-0 w-full h-full">
+      <img 
+        src="/images/backgrounds/home-bg.jpg" 
+        alt="Casa de lujo recién remodelada" 
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <!-- Superposición clara para mejorar la legibilidad del contenido -->
+      <div class="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
+    </div>
   </div>
-</div>
+)}
 
 <style>
   /* Asegurarse de que el fondo no interfiera con la interacción del usuario */

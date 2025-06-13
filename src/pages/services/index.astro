@@ -1,12 +1,12 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import ServicesLayout from "@/layouts/ServicesLayout.astro";
 
 // List of services with local images and improved descriptions
 const services = [
   // Painting
   {
-    title: "Pintura Residencial y Comercial",
-    description: "Servicios profesionales de pintura para interiores y exteriores con los más altos estándares de calidad.",
+    title: "Residential and Commercial Painting",
+    description: "Professional painting services for interiors and exteriors with the highest quality standards.",
     url: "/services/painting",
     image: "/images/services/pintura.jpg"
   },
@@ -150,48 +150,75 @@ const jsonLd = JSON.stringify({
 
 ---
 
-<Layout title="Our Services | Sevilla Remodeling LLC">
+<ServicesLayout title="Our Services | Sevilla Remodeling LLC">
+  <!-- Logo flotante con animación (igual que en la página principal) -->
+  <div class="corner-logo">
+    <img 
+      src="/images/logo.png" 
+      alt="Sevilla Remodeling Logo" 
+      class="w-32 h-32 lg:w-40 lg:h-40"
+    />
+  </div>
+  
   <style>
-    /* Estilos para la página completa */
-    body {
-      background-color: #e6f0ff; /* Color azul suave de fondo */
-      min-height: 100vh;
+    .corner-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      animation: float 3s ease-in-out infinite;
     }
     
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .corner-logo {
+        top: 10px;
+        left: 10px;
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+  <style>
     /* Styles for the services page */
     .services-container { 
       max-width: 1400px; 
       margin: 0 auto; 
-      padding: 2rem; 
-      font-family: 'Inter', sans-serif;
+      padding: 3rem 2rem; 
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      z-index: 1;
     }
     
     .services-header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       position: relative;
-      background: linear-gradient(135deg, #1e3a8a10, #3b82f610);
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.1);
       padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    .services-title { 
-      color: #1a365d; 
-      margin-bottom: 1.5rem;
+    .services-title {
+      font-family: 'Playfair Display', serif;
       font-size: 3rem;
       font-weight: 700;
-      font-family: 'Bricolage Grotesque', sans-serif;
-    }
-    
-    .services-title:after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: #3b82f6;
-      margin: 15px auto 0;
-      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+      letter-spacing: 1px;
     }
     
     .services-description {
@@ -200,10 +227,11 @@ const jsonLd = JSON.stringify({
       font-size: 1.1rem;
       color: #4b5563;
       line-height: 1.6;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 0.75rem;
       padding: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
     }
     
     /* Grid de servicios con distribución 4x4 */
@@ -212,6 +240,8 @@ const jsonLd = JSON.stringify({
       grid-template-columns: repeat(4, 1fr); 
       gap: 2rem; 
       margin-top: 3rem;
+      position: relative;
+      z-index: 2;
     }
     
     /* Responsive para tablets */
@@ -236,21 +266,40 @@ const jsonLd = JSON.stringify({
     }
     
     /* Cards con espaciado correcto */
-    .service-card { 
-      background: white; 
-      border-radius: 1rem; 
+    .service-card {
+      background-color: rgba(255, 255, 255, 0.97);
+      border-radius: 0.75rem;
       overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(59, 130, 246, 0.1); /* Borde sutil azul */
+      height: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
     }
     
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-7px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
     }
     
     .service-image-container {
@@ -351,10 +400,10 @@ const jsonLd = JSON.stringify({
   <main>
     <div class="services-container">
       <header class="services-header">
-        <h1 class="services-title">
+        <h1 class="services-title" style="background: linear-gradient(to bottom, #3b82f6, #1e40af); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
           Our Services
         </h1>
-        <p class="services-description bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-sm">
+        <p class="services-description bg-white/90 backdrop-blur-md rounded-lg px-8 py-5 shadow-lg max-w-3xl mx-auto">
           Comprehensive remodeling solutions to transform your spaces with quality and style. 
           We have years of experience and a specialized team for each project.
         </p>
@@ -417,4 +466,4 @@ const jsonLd = JSON.stringify({
   
   {/* Schema.org JSON-LD para SEO mejorado */}
   <script type="application/ld+json" set:html={jsonLd} />
-</Layout>
+</ServicesLayout>
